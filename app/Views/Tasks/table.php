@@ -1,53 +1,56 @@
-<div class="container-lg">
-<div class="container-xl">
+<div class="container-sm">
     <div class="table-responsive">
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-xl-8 col-lg-8 col-sm-3 col-xs-2">
                         <h2>Manage <b>Tasks</b></h2>
                     </div>
-                    <div class="col-sm-6">
-                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i
-                                    class="material-icons">&#xE147;</i> <span>Add New Task</span></a>
+                    <div class="col-xl-4 col-lg-4 col-sm-4 col-xs-2">
+                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
+                            <i class="material-icons">&#xE147;</i> <span>Add New Task</span></a>
                     </div>
                 </div>
             </div>
-            <table class="table table-striped table-hover" data-editable="true">
-                <thead>
-                <tr>
-                    <th >ID</th>
-                    <th>Name</th>
-                    <th data-editable="true">Text</th>
-                    <th data-editable="true">Status</th>
-                    <th>Due Date</th>
-                    <th>Creation Date</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php $counter = 1;
-                foreach ($tasks as $task) { ?>
+            <div class="table-responsive col-xl-12 col-lg-12 col-sm-12">
+                <table class="table table-striped table-hover table-sm">
+                    <thead>
                     <tr>
-                        <td><?= $task['id'] ?></td>
-                        <td><?= $task['name'] ?></td>
-                        <td data-text="<?= $task['text'] ?>"><?= $task['text'] ?></td>
-                        <td data-status="<?= $task['status'] ?>"><?= $task['status'] ?></td>
-                        <td><?= $task['due_date'] ?></td>
-                        <td><?= $task['creation_date'] ?></td>
-                        <td>
-                            <a href="#editEmployeeModal" data-id="<?= $task['id'] ?>" class="edit_row" data-toggle="modal"><i class="material-icons"
-                                                                                             data-toggle="tooltip"
-                                                                                             title="Edit">&#xE254;</i></a>
-                            <a href="#deleteEmployeeModal" data-id="<?= $task['id'] ?>" class="delete_row" data-toggle="modal"><i class="material-icons"
-                                                                                                 data-toggle="tooltip"
-                                                                                                 title="Delete">&#xE872;</i></a>
-                        </td>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Text</th>
+                        <th>Status</th>
+                        <th>Due Date</th>
+                        <th>Creation Date</th>
+                        <th>Actions</th>
                     </tr>
-                    <?php $counter++;
-                } ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    <?php $counter = 1;
+                    foreach ($tasks as $task) { ?>
+                        <tr>
+                            <td><?= $task['id'] ?></td>
+                            <td><?= $task['name'] ?></td>
+                            <td data-text="<?= $task['text'] ?>"><?= $task['text'] ?></td>
+                            <td data-status="<?= $task['status'] ?>"><?= $task['status'] ?></td>
+                            <td><?= $task['due_date'] ?></td>
+                            <td><?= $task['creation_date'] ?></td>
+                            <td>
+                                <a href="#editEmployeeModal" data-id="<?= $task['id'] ?>" class="edit_row"
+                                   data-toggle="modal"><i class="material-icons"
+                                                          data-toggle="tooltip"
+                                                          title="Edit">&#xE254;</i></a>
+                                <a href="#deleteEmployeeModal" data-id="<?= $task['id'] ?>" class="delete_row"
+                                   data-toggle="modal"><i class="material-icons"
+                                                          data-toggle="tooltip"
+                                                          title="Delete">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                        <?php $counter++;
+                    } ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
@@ -58,7 +61,9 @@
             <form>
                 <div class="modal-header">
                     <h4 class="modal-title">Add Task</h4>
-                    <button type="button" id="add_close" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <button type="button" id="add_close" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
@@ -93,7 +98,9 @@
             <form>
                 <div class="modal-header">
                     <h4 class="modal-title">Edit Task</h4>
-                    <button type="button" id="edit_close" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <button type="button" id="edit_close" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
