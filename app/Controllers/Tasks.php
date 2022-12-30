@@ -35,9 +35,7 @@ class Tasks extends Controller
     public function index()
     {
         $task = new TaskModel();
-        $tasks = $task->findAll();
-        $data = [];
-        $data['tasks'] = $tasks;
+        $data['tasks'] = $task->findAll();
         return view('tasks/header')
             . view('tasks/navbar')
             . view('tasks/table', $data)
@@ -46,7 +44,6 @@ class Tasks extends Controller
 
     public function create()
     {
-
         $tmpArray = $this->request->getJSON();
         $validateData = json_decode(json_encode($tmpArray), true);
         if (!$this->validateData($validateData, $this->creationRule)) {
