@@ -58,7 +58,7 @@ class Tasks extends Controller
 
         $res = $this->task->insert($data);
         if (!$res) {
-            return $this->response->setStatusCode(400)->setJSON(["error" => "something went wrong, update failed"]);
+            return $this->response->setStatusCode(400)->setJSON(["error" => "something went wrong, creation failed"]);
         }
         return $this->response->setStatusCode(200);
     }
