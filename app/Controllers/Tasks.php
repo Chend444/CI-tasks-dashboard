@@ -37,7 +37,6 @@ class Tasks extends Controller
         $task = new TaskModel();
         $data['tasks'] = $task->findAll();
         return view('tasks/header')
-            . view('tasks/navbar')
             . view('tasks/table', $data)
             . view('tasks/footer');
     }
