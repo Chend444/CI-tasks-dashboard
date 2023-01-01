@@ -1,3 +1,4 @@
+<body>
 <div class="container-sm">
     <div class="table-responsive">
         <div class="table-wrapper">
@@ -121,3 +122,4 @@
         </div>
     </div>
 </div>
+</body>
